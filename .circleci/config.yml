@@ -1,0 +1,12 @@
+version: 2
+jobs:
+   build:
+     docker:
+       - image: fblanning/latex
+     steps:
+       - checkout
+       - run: xelatex applied.tex
+       - run: mkdir build; mv applied.pdf build/
+       - store_artifacts:
+          path: build/
+
