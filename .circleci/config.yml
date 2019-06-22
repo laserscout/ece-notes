@@ -5,8 +5,8 @@ jobs:
        - image: fblanning/latex
      steps:
        - checkout
-       - run: xelatex applied.tex;xelatex applied.tex;xelatex applied.tex
-       - run: mkdir build; mv applied.pdf build/
+       - run: xelatex numerical.tex;xelatex applied.tex;xelatex numerical.tex
+       - run: mkdir build; mv numerical.pdf build/
        - store_artifacts:
           path: build/
 
