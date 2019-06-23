@@ -1,12 +1,15 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: fblanning/latex
-     steps:
-       - checkout
-       - run: xelatex numerical.tex;xelatex applied.tex;xelatex numerical.tex
-       - run: mkdir build; mv numerical.pdf build/
-       - store_artifacts:
+  build:
+    docker:
+      - image: fblanning/latex
+    steps:
+      - checkout
+      - run: xelatex numerical.tex;xelatex applied.tex;xelatex numerical.tex
+      - run: mkdir build; mv numerical.pdf build/
+      - store_artifacts:
           path: build/
+    branches:
+      only:
+        - master
 
